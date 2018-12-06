@@ -6,11 +6,10 @@
 	],
 	"jsRules": {},
 	"rules": {
-		"indent": [
-			true,
-			"tabs",
-			2
-		]
+		"indent": [true, "tabs", 2],
+		"ter-indent": [false],
+		"semicolon": [true, "never"],
+		"no-console": [false]
 	},
 	"rulesDirectory": []
 }
