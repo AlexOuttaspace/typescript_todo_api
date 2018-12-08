@@ -17,7 +17,8 @@ export class Routes {
 			.delete(this.todoController.deleteTodo)
 
 		app
-			.route('*', (req: Request, res: Response) => {
+			.route('*')
+			.get((req: Request, res: Response) => {
 				res.status(404).json({ notFound: 'looks like you did an oopsie :D' })
 			})
 	}
