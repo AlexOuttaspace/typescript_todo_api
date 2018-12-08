@@ -1,3 +1,4 @@
+import { Request, Response } from 'express'
 import { TodoController } from './todo-controller'
 
 export class Routes {
@@ -14,5 +15,10 @@ export class Routes {
 			.get(this.todoController.getTodo)
 			.put(this.todoController.updateTodo)
 			.delete(this.todoController.deleteTodo)
+
+		app
+			.route('*', (req: Request, res: Response) => {
+				res.status(404).json({ notFound: 'looks like you did an oopsie :D' })
+			})
 	}
 }
