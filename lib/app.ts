@@ -1,14 +1,16 @@
-// lib/app.ts
 import * as bodyParser from 'body-parser'
 import * as express from 'express'
 import * as mongoose from 'mongoose'
 import { Routes } from './routes'
 
+const dbUsername = process.env.DB_USERNAME
+const dbPassword = process.env.DB_PASSWORD
+
 class App {
 
 	public app: express.Application
 	public routePrv: Routes = new Routes()
-	public mongoUrl: string = 'mongodb://localhost/ts_todo'
+	public mongoUrl: string = `mongodb://${dbUsername}:${dbPassword}@ds227594.mlab.com:27594/tsc-todo-api`
 
 	constructor () {
 		this.app = express()
